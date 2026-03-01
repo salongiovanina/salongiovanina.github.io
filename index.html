@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salon Giovanina — Gentle Beauty for Senior Communities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #738754;       /* Oregeno – main brand color */
+      --secondary: #CCA027;     /* Gold Sparkle – neutral, elegant backgrounds & text */
+      --accent: #AEBEAC;        /* Blush Green – highlights & cheerful accents */
+      --dark: #434E3D;          /* Cabbage Pont - for strong text contrast */
+      --light: #E2E4D9;         /* Liliana - Very soft off-white background */
+      --warm-light: #E2E4D9;    /* Grey - Subtle warm-tinted background panels */
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lora', serif;
+      line-height: 1.8;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+    header {
+      background: linear-gradient(to bottom, rgba(100,149,237,0.15), rgba(100,149,237,0.05)),
+                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27c1d4?auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: var(--dark);
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(253,253,255,0.8), rgba(253,253,255,0.92));
+      z-index: 1;
+    }
+    header > * {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    header p {
+      font-size: 1.55rem;
+      font-style: italic;
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--secondary);
+    }
+    nav {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(154,169,172,0.3);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1.5rem 0;
+    }
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      margin: 0 2.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    section {
+      margin-bottom: 5.5rem;
+      background: white;
+      padding: 3.8rem 3.2rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 45px rgba(100,149,237,0.08);
+      border: 1px solid rgba(154,169,172,0.15);
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+      text-align: center;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 70px;
+      height: 3px;
+      background: var(--accent);
+      display: block;
+      margin: 1.2rem auto 0;
+      border-radius: 2px;
+    }
+    p, ul {
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      columns: 2;
+      column-gap: 3.5rem;
+    }
+    ul li {
+      padding: 0.9rem 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+    ul li::before {
+      content: "✦";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+    }
+    .locations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.2rem;
+    }
+    .location-item {
+      background: var(--warm-light);
+      padding: 2rem;
+      border-radius: 14px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--primary);
+      border: 1px solid rgba(154,169,172,0.2);
+      transition: all 0.3s ease;
+    }
+    .location-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 35px rgba(100,149,237,0.12);
+      background: linear-gradient(135deg, rgba(255,253,116,0.08), rgba(100,149,237,0.05));
+    }
+    .contact-text {
+      text-align: center;
+      font-size: 1.5rem;
+      font-style: italic;
+      margin: 2.8rem 0;
+      color: var(--secondary);
+    }
+    .highlight {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .accent-text {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      margin-top: 5rem;
+    }
+    footer p {
+      margin: 0.9rem 0;
+      font-size: 1.15rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 3.4rem; }
+      header { padding: 5.5rem 1rem 4rem; }
+      nav ul { flex-direction: column; gap: 1.2rem; }
+      nav a { margin: 0.7rem 0; font-size: 1.45rem; }
+      ul { columns: 1; }
+      section { padding: 2.8rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salon Giovanina</h1>
+    <p>Gentle, professional beauty care delivered with warmth to senior & special care communities</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#locations">Communities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Salon Giovanina</h2>
+      <p>With more than <span class="highlight">20 years</span> of heartfelt service, Salon Giovanina brings expert, compassionate salon care directly to residents in senior and special care settings — always with dignity, patience, and personalized attention.</p>
+      <p>We proudly serve:</p>
+      <ul>
+        <li>Assisted Living</li>
+        <li>Independent Living</li>
+        <li>Nursing & Rehabilitation</li>
+        <li>Hospitals</li>
+        <li>Memory Care</li>
+        <li>Continuing Care Retirement Communities (CCRCs)</li>
+      </ul>
+    </section>
+
+    <section id="services">
+      <h2>Our Signature Services</h2>
+      <p>Carefully chosen and gently performed using premium, senior-friendly products:</p>
+      <ul>
+        <li>Shampoo & Wash</li>
+        <li>Haircuts</li>
+        <li>Men's Cuts</li>
+        <li>Coloring</li>
+        <li>Perms</li>
+      </ul>
+      <p style="margin-top: 2.2rem; text-align: center; font-style: italic; font-size: 1.28rem;">
+        Every touch is delivered with kindness, respect, and attention to comfort.
+      </p>
+    </section>
+
+    <section id="locations">
+      <h2>Communities We Serve</h2>
+      <p>We are privileged to partner with these and many other wonderful communities:</p>
+      <div class="locations">
+        <div class="location-item">Terraces at Park Place</div>
+        <div class="location-item">Elmwood Hills</div>
+        <div class="location-item">North Brook</div>
+        <div class="location-item">Mullica Gardens</div>
+        <div class="location-item">Merion Gardens</div>
+      </div>
+      <p style="margin-top: 2.8rem; text-align: center; font-style: italic;">
+        Bringing salon elegance and convenience right to your doorstep.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="contact-text">
+        We’d be honored to bring Salon Giovanina’s caring touch to your community or loved one.<br>
+        Reach out to schedule visits or explore how we can serve your facility.
+      </p>
+      <p style="text-align: center; font-size: 1.7rem; color: var(--primary); font-family: 'Playfair Display', serif; margin: 3rem 0;">
+        📞 Inquiries & Appointments Welcome<br>
+        (Contact details provided via your community coordinator or upon request)
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Salon Giovanina. Serving with care for over 20 years.</p>
+    <p>Mobile beauty services tailored for senior and special needs communities.</p>
+  </footer>
+
+</body>
+</html>
